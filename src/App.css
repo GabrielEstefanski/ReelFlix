@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+}
+
+.actions-field {
+    display: flex;
+    align-items: center;
+}
+
+
+.header-text {
+    color: #fff;
+    padding-right: 20px;
+}
+
+.button {
+    cursor: pointer;
+    border-radius: 0.1875rem;
+}
+
+.button-login {
+    color: #fff;
+    background-color: rgb(2, 4, 26);
+    border-radius: 0.1875rem;
+    border-width: 0.0625rem;
+    transition: inherit;
+    border-style: solid;
+    height: 35px;
+    width: 80px;
+    border: 1px solid #888;
+    transition: background-color 0.3s ease;
+}
+
+.button-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    height: 3vw;
+    padding: 10px 2%;
+    object-fit: cover;
+    z-index: 100;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.container {
+    width: 90%;
+    margin-left: 5vw;
+    align-items: center;
+    align-content: center;
+    color: rgba(255, 255, 255, 1);
+}
+
+.image-title {
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    margin-top: 1vw;
+    font-size: 20px;
+}
+
+.image-wrapper {
+    max-width: 20vw;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 80%;
+        align-self: center;
+        margin-left: 10vw;
+        align-items: center;
+        align-content: center;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+    }
+
+    .image-wrapper {
+        width: 40rem;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .image-wrapper img {
+
+        height: 10rem;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 30px;
+    }
+}
