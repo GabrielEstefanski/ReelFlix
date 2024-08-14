@@ -3,6 +3,9 @@ import styled from "styled-components"
 import LoginCard from './components/helpCard';
 
 import icon from '../../images/icon.png'
+import Card from '../../components/cards/card';
+import FloatLabel from '../../components/floatLabel';
+import CheckBox from '../../components/checkbox';
 
 const Image = styled.div`
   justify-content: center;
@@ -45,7 +48,11 @@ export default function LoginHelp() {
         <Image>
           <img src={icon} alt="" />
         </Image>
-      <LoginCard />
+        <Card
+      title="Recuperar senha"
+      inputField={<div>123</div>}
+      footer={<div>Não me lembro do meu email.</div>}
+    />
     </Container>
   )
 }

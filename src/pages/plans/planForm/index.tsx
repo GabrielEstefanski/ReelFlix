@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import HeaderPlan from "../components/headerPlan";
+import DefaultCache from "../components/defaultCache";
 import StepIndicator from "../components/stepIndicator";
+import DefaultButton from "../../../components/buttons/DefaultButton";
 import StepTitle from "../components/stepTitle";
 import FormPlanSelection from "../components/formPlanSelection";
 import { useNavigate } from "react-router-dom";
@@ -10,27 +12,13 @@ const Container = styled.div`
   max-width: 1100px;
   padding: 24px 38px;
   margin: 0px auto;
-  box-size: border-box;
+  box-sizing: border-box;
 `
 
 const ButtonNextContainer = styled.div`
   margin: 20px auto;
   max-width: 440px;
 `
-
-const ButtonNext = styled.button`
-  width: 100%;
-  background: rgb(255, 124, 0);
-  margin: 0;
-  border: 0;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  min-height: 3.5rem;
-`
-
 
 export default function Plans() {
   const navigate = useNavigate();
@@ -44,14 +32,21 @@ export default function Plans() {
     <>
       <HeaderPlan />
       <Container>
-        <StepIndicator description="PASSO 1 DE 3" />
-        <StepTitle description="Escolha o melhor plano para você" />
-        <FormPlanSelection setSelectedPlan={setSelectedPlan} />
-        <>
-          <ButtonNextContainer>
-            <ButtonNext className="button" onClick={planPath}>Próximo</ButtonNext>
-          </ButtonNextContainer>
-        </>
+        <DefaultCache>
+          <StepIndicator description="PASSO 1 DE 3" />
+          <StepTitle description="Escolha o melhor plano para você" />
+          <FormPlanSelection setSelectedPlan={setSelectedPlan} />
+          <>
+            <ButtonNextContainer>
+              <DefaultButton 
+                description="Próximo"
+                color="rgb(255, 124, 0)"
+                style={{ fontSize: '1.5em', fontWeight: 700,  minHeight: '3.5rem'}}
+                onClick={planPath}
+              />
+            </ButtonNextContainer>
+          </>
+        </DefaultCache>
       </Container>
     </>
   )

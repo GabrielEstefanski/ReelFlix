@@ -6,18 +6,20 @@ import LoginHelp from "./pages/loginHelp";
 import PlanForm from "./pages/plans/planForm";
 import LoginPlan from "./pages/plans/loginPlan";
 import SuccessPlan from "./pages/plans/successPlan";
+import Loading from "./pages/loading";
 
 export default function AppRouter() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Home />}></Route>
-                <Route path="movies" element={<Movies />}></Route>
-                <Route path="plan-form" element={<PlanForm />}></Route>
-                <Route path="login" element={<Login />}></Route>
-                <Route path="login-help" element={<LoginHelp />}></Route>
-                <Route path="login-plan" element={<LoginPlan />}></Route>
-                <Route path="success-plan" element={<SuccessPlan />}></Route>
+                <Route index element={<Home/>}/>
+                <Route path="movies" element={<Movies/>}/>
+                <Route path="plan-form" element={<PlanForm/>}/>
+                <Route path="login" element={<Login/>}/>
+                <Route path="login-help" element={<LoginHelp/>}/>
+                <Route path="login-plan" element={<LoginPlan/>}/>
+                <Route path="success-plan" element={<SuccessPlan/>}/>
+                <Route path="loading" element={<Loading/>}/>
             </Routes>
         </BrowserRouter>
     )

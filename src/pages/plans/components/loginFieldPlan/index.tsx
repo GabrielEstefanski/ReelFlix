@@ -1,5 +1,6 @@
 import FloatLabel from "../../../../components/floatLabel";
 import BandedRows from "../../../../components/bandedRow";
+import DefaultButton from "../../../../components/buttons/DefaultButton";
 import styled from "styled-components";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,19 +17,6 @@ const LoginStructural = styled.ul`
 
 const LoginContainer = styled.div`
   margin: 16px 0 20px;
-`
-
-const ButtonNext = styled.button`
-  width: 100%;
-  background: rgb(255, 124, 0);
-  margin: 0;
-  border: 0;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  min-height: 3.5rem;
 `
 
 const FieldWrapper = styled.li`
@@ -116,12 +104,12 @@ export default function LoginFieldPlan () {
             </FieldWrapper>
             <ButtonNextContainer>
             <div onBlur={handlePasswordBlur}>
-              <ButtonNext 
-                className="button"
+              <DefaultButton 
+                description="Próximo" 
+                color='rgb(255, 124, 0)'
+                style={{ fontSize: '1.5em', fontWeight: 700,  minHeight: '3.5rem'}}
                 onClick={handleLogin}
-              >
-                Próximo
-              </ButtonNext>
+              />
             </div>
             </ButtonNextContainer>
           </LoginContainer>

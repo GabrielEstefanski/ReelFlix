@@ -28,7 +28,7 @@ const Text = styled.div`
 	}
 `
 
-class Header extends React.Component {
+export default class Header extends React.Component {
 	render() {
 		return (
 			<Container>
@@ -44,5 +44,3 @@ class Header extends React.Component {
 		)
 	}
 }
-
-export default Header

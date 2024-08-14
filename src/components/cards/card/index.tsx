@@ -8,7 +8,7 @@ interface Props {
 
 const Container = styled.div`
   background-color: rgb(255, 255, 255, 0.9);
-  min-height: 600px;
+  min-height: 650px;
   max-width: 450px;
   box-sizing: border-box;
   width: 100%;

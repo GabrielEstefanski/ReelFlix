@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HeaderPlan from "../components/headerPlan";
+import DefaultCache from "../components/defaultCache";
 import StepIndicator from "../components/stepIndicator";
 import StepTitle from "../components/stepTitle";
 import LoginFieldPlan from "../components/loginFieldPlan";
@@ -45,17 +46,19 @@ export default function LoginPlan() {
     <>
       <HeaderPlan />
       <Container>
-        <form onSubmit={handleFormSubmit}>
-        <FormContainer>
-          <StepIndicator description="PASSO 2 DE 3" />
-          <StepTitle description="Crie uma senha para iniciar sua assinatura" />
-            <ContextRow>
-              <p>Você selecionou o plano <SelectedPlanText>{selectedPlan}</SelectedPlanText>.</p>
-              <p>Falta pouco agora!</p>
-            </ContextRow>
-          <LoginFieldPlan/>
-        </FormContainer>
-        </form>
+        <DefaultCache>
+          <form onSubmit={handleFormSubmit}>
+            <FormContainer>
+              <StepIndicator description="PASSO 2 DE 3" />
+              <StepTitle description="Crie uma senha para iniciar sua assinatura" />
+                <ContextRow>
+                  <p>Você selecionou o plano <SelectedPlanText>{selectedPlan}</SelectedPlanText>.</p>
+                  <p>Falta pouco agora!</p>
+                </ContextRow>
+              <LoginFieldPlan/>
+            </FormContainer>
+          </form>
+        </DefaultCache>
       </Container>
     </>
   )
