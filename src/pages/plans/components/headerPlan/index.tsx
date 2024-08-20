@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import icon from '../../../../images/icon.png';
 import styled from "styled-components";
 
@@ -28,6 +29,8 @@ const LinkPath = styled.a`
 `
 
 export default function HeaderPlan (){
+  const { t } = useTranslation();
+
   return (
     <Container>
       <>
@@ -35,7 +38,7 @@ export default function HeaderPlan (){
       </>
       <LoginField>
         <LinkPath href="login">
-          Entrar
+          {t('enter')}
         </LinkPath>
       </LoginField>
     </Container>

@@ -1,5 +1,7 @@
-import styled from "styled-components"
-import fieldPromotional from "../../../../images/promotional-image.png"
+import React from "react";
+import { useTranslation } from 'react-i18next';
+import styled from "styled-components";
+import fieldPromotional from "../../../../images/promotional-image.png";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +15,8 @@ const Container = styled.div`
     flex-direction: row;
     padding: 0 20%;
   }
-`
+`;
+
 const DescriptionField = styled.div`
   margin: 2rem 0 0;
   display: flex;
@@ -22,7 +25,7 @@ const DescriptionField = styled.div`
   color: #fff;
   align-content: center;
   flex-direction: column;
-`
+`;
 
 const Title = styled.div`
   font-size: 2.5rem;
@@ -33,7 +36,7 @@ const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 650;
   }
-`
+`;
 
 const Description = styled.div`
   font-size: 1.5rem;
@@ -43,7 +46,7 @@ const Description = styled.div`
     font-size: 1.2rem;
     width: 90%;
   }
-`
+`;
 
 const Photo = styled.div`
   display: flex;
@@ -61,14 +64,16 @@ const Photo = styled.div`
       max-width: 100%;
     }
   }
-`
+`;
 
 export default function FieldPromotional() {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <DescriptionField>
-        <Title>Assista a qualquer momento</Title>
-        <Description>Baixe seus filmes e séries e assista offline na sua casa, no elevador, submarino ou espaço</Description>
+        <Title>{t('watch_anytime')}</Title>
+        <Description>{t('download_and_watch')}</Description>
       </DescriptionField>
       <Photo>
         <img src={fieldPromotional} alt="promotional"/>

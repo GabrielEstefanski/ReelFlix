@@ -2,7 +2,7 @@ import React from "react";
 import ImageSlider from "../imageSlider";
 import styled from "styled-components";
 import { Image } from "../../../../interfaces";
-import usePreloadImages from "../../../../hook/usePreloadImages";
+import usePreloadImages from "../../../../hooks/usePreloadImages";
 
 const CarouselContainer = styled.div`
   width: 80%;

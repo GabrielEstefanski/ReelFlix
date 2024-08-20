@@ -1,11 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "styled-components"
-import LoginCard from './components/helpCard';
 
 import icon from '../../images/icon.png'
 import Card from '../../components/cards/card';
+import LinkButton from '../../components/LinkButton';
 import FloatLabel from '../../components/floatLabel';
-import CheckBox from '../../components/checkbox';
+import RecaptchaTerms from '../../components/recaptchaTerms';
+import { useTranslation } from 'react-i18next';
+import DefaultButton from '../../components/buttons/DefaultButton';
+import { useLocation } from 'react-router-dom';
 
 const Image = styled.div`
   justify-content: center;
@@ -28,6 +31,10 @@ const Container = styled.div`
 `
 
 export default function LoginHelp() {
+  const { t } = useTranslation();
+  const [email, setEmail] = useState('');
+  const location = useLocation();
+  const [isEmailForgotten, setIsEmailForgotten] = useState(location.hash === '#forgot-email');
 
   useEffect(() => {
     document.body.style.backgroundImage = 'url("https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg")';
@@ -43,16 +50,68 @@ export default function LoginHelp() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      setIsEmailForgotten(window.location.hash === '#forgot-email');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  function handleSendEmail() {
+    if (email){
+      alert('Email sended!');
+    }
+  }
+
   return (
     <Container>
         <Image>
           <img src={icon} alt="" />
         </Image>
         <Card
-      title="Recuperar senha"
-      inputField={<div>123</div>}
-      footer={<div>Não me lembro do meu email.</div>}
-    />
+          title={t('login_help.recover_password')}
+          inputField={
+            <>
+              {!isEmailForgotten ? (
+               <>
+                  <div>{t('login_help.description_reset_password')}</div>
+                  <FloatLabel
+                    type="email"
+                    id="email"
+                    text={t('enter_your_email')}
+                    value={email}
+                    onChange={setEmail}
+                  />
+                  <DefaultButton description={t('email_me')} onClick={handleSendEmail} color='rgb(195, 125, 22, 1.0)' />
+                </>
+              ) : (
+                <>
+                123
+                  <div>{t('login_help.description_reset_password')}</div>
+                    <FloatLabel
+                      type="email"
+                      id="email"
+                      text={t('enter_your_email')}
+                      value={email}
+                      onChange={setEmail}
+                    />
+                    <DefaultButton description={t('email_me')} onClick={handleSendEmail} color='rgb(195, 125, 22, 1.0)' />
+                </>
+              )}
+            </>
+          }
+          footer={
+            <div>
+              <LinkButton text={t('login_help.idk_email')}  access='#forgot-email'/>              
+              <RecaptchaTerms/>
+            </div>
+          }
+        />
     </Container>
   )
 }

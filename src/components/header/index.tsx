@@ -3,6 +3,7 @@ import icon from '../../images/icon.png';
 import PlanButton from "../buttons/PlanButton";
 import LoginButton from "../buttons/LoginButton";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
 	background-color: #000;
@@ -28,19 +29,19 @@ const Text = styled.div`
 	}
 `
 
-export default class Header extends React.Component {
-	render() {
-		return (
-			<Container>
-				<>
-					<img src={icon} alt="icon"></img>
-				</>
-				<Actions>
-					<Text>Assista onde e quando quiser</Text>
-					<PlanButton />
-					<LoginButton />
-				</Actions>
-			</Container>
-		)
-	}
-}
+const Header = () => {
+	const { t } = useTranslation();
+
+	return (
+		<Container>
+			<img src={icon} alt="icon"></img>
+			<Actions>
+				<Text>{t('watch_anytime')}</Text>
+				<PlanButton />
+				<LoginButton />
+			</Actions>
+		</Container>
+	);
+};
+
+export default Header;

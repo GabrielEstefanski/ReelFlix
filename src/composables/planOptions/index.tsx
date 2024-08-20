@@ -1,45 +1,50 @@
-export const planOptions = [
+import { TFunction } from 'i18next'
+import { useTranslation } from 'react-i18next'
+
+const getPlanOptions = (t: TFunction<"translation", undefined>) => [
   {
     id: "premium-plus",
-    value: "Premium Plus",
-    title: "Premium +",
-    subtitle: "4K + HDR",
+    value: t('premium_plus.title'),
+    title: t('premium_plus.title'),
+    subtitle: t('premium_plus.subtitle'),
     details: [
-      { title: "Preço/mês", description: "R$ 39.90" },
-      { title: "Qualidade de vídeo e áudio", description: "Perfeita" },
-      { title: "Resolução", description: "4K (Ultra HD) + HDR" },
-      { title: "Áudio espacial (som imersivo)", description: "Incluso" },
-      { title: "Aparelhos compatíveis", description: "TV, computador, celular, tablet" },
-      { title: "Preco/Mes", description: "R$ 39.90" },
-      { title: "Anúncios", description: "Sem anúncios" }
+      { title: t('price_per_month'), description: t('premium_plus.price_per_month') },
+      { title: t('video_audio_quality'), description: t('premium_plus.video_audio_quality') },
+      { title: t('resolution'), description: t('premium_plus.resolution') },
+      { title: t('spatial_audio'), description: t('premium_plus.spatial_audio') },
+      { title: t('compatible_devices'), description: t('premium_plus.compatible_devices') },
+      { title: t('ads'), description: t('premium_plus.ads') }
     ]
   },
   {
     id: "premium",
-    value: "Premium",
-    title: "Premium",
-    subtitle: "1080p",
+    value: t('premium.title'),
+    title: t('premium.title'),
+    subtitle: t('premium.subtitle'),
     details: [
-      { title: "Preço/mês", description: "R$ 29.90" },
-      { title: "Qualidade de vídeo e áudio", description: "Ótima" },
-      { title: "Resolução", description: "4K (Ultra HD) + HDR" },
-      { title: "Aparelhos compatíveis", description: "TV, computador, celular, tablet" },
-      { title: "Preco/Mes", description: "R$ 29.90" },
-      { title: "Anúncios", description: "Sem anúncios" }
+      { title: t('price_per_month'), description: t('premium.price_per_month') },
+      { title: t('video_audio_quality'), description: t('premium.video_audio_quality') },
+      { title: t('resolution'), description: t('premium.resolution') },
+      { title: t('compatible_devices'), description: t('premium.compatible_devices') },
+      { title: t('ads'), description: t('premium.ads') }
     ]
   },
   {
     id: "standard",
-    value: "Padrão",
-    title: "Standard",
-    subtitle: "1080p",
+    value: t('standard.title'),
+    title: t('standard.title'),
+    subtitle: t('standard.subtitle'),
     details: [
-      { title: "Preço/mês", description: "R$ 19.90" },
-      { title: "Qualidade de vídeo e áudio", description: "Boa" },
-      { title: "Resolução", description: "4K (Ultra HD) + HDR" },
-      { title: "Aparelhos compatíveis", description: "TV, computador, celular, tablet" },
-      { title: "Preco/Mes", description: "R$ 19.90" },
-      { title: "Anúncios", description: "Com anúncios" }
+      { title: t('price_per_month'), description: t('standard.price_per_month') },
+      { title: t('video_audio_quality'), description: t('standard.video_audio_quality') },
+      { title: t('resolution'), description: t('standard.resolution') },
+      { title: t('compatible_devices'), description: t('standard.compatible_devices') },
+      { title: t('ads'), description: t('standard.ads') }
     ]
   }
-];
+]
+
+export default function usePlanOptions() {
+  const { t } = useTranslation()
+  return getPlanOptions(t)
+}

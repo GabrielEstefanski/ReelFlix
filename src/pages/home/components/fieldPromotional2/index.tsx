@@ -1,7 +1,8 @@
-import styled from "styled-components"
-import promotionalImage from '../../../../images/promotional-image2.png'
+import { useTranslation } from 'react-i18next';
+import styled from "styled-components";
+import promotionalImage from '../../../../images/promotional-image2.png';
 
-const Conteiner = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +14,8 @@ const Conteiner = styled.div`
     flex-direction: row;
     margin: 0 20%;
   }
-`
+`;
+
 const DescriptionField = styled.div`
   margin: 2rem 0 0;
   display: flex;
@@ -22,7 +24,7 @@ const DescriptionField = styled.div`
   color: #fff;
   align-content: center;
   flex-direction: column;
-`
+`;
 
 const Title = styled.div`
   font-size: 2.5rem;
@@ -33,7 +35,7 @@ const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 650;
   }
-`
+`;
 
 const Description = styled.div`
   font-size: 1.5rem;
@@ -43,7 +45,7 @@ const Description = styled.div`
     font-size: 1.2rem;
     width: 90%;
   }
-`
+`;
 
 const Photo = styled.div`
   display: flex;
@@ -61,18 +63,20 @@ const Photo = styled.div`
       max-width: 100%;
     }
   }
-`
+`;
 
 export default function FieldPromotional2() {
+  const { t } = useTranslation();
+
   return (
-    <Conteiner>
+    <Container>
       <DescriptionField>
-        <Title>Baixe para assistir quando e onde quiser</Title>
-        <Description>Assista offline no app Prime Video ao baixar títulos em seu iPhone, iPad, tablet ou dispositivo Android.</Description>
+        <Title>{t('download_anytime')}</Title>
+        <Description>{t('offline_watch')}</Description>
       </DescriptionField>
       <Photo>
         <img src={promotionalImage} alt="promotional"/>
       </Photo>
-    </Conteiner>
+    </Container>
   )
 }

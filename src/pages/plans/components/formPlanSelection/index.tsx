@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PlanOption from '../../../../pages/plans/components/planOption/index';
-import { planOptions } from '../../../../composables/planOptions';
+import getPlanOptions from '../../../../composables/planOptions';
 
 const Form = styled.form`
   padding-top: 20px;
@@ -17,14 +17,17 @@ interface FormPlanSelectionProps {
 }
 
 export default function FormPlanSelection({ setSelectedPlan }: FormPlanSelectionProps) {
-  const [selectedPlan, setSelectedPlanState] = useState(planOptions[0].value);
+  const [selectedPlan, setSelectedPlanState] = useState<string>('');
+  const planOptions = getPlanOptions();
 
   useEffect(() => {
     const storedPlan = localStorage.getItem('selectedPlan');
     if (storedPlan) {
       setSelectedPlanState(storedPlan);
+    } else {
+      setSelectedPlanState(planOptions[0].value);
     }
-  }, []);
+  }, [planOptions]);
 
   const handlePlanChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedPlan = event.target.value;

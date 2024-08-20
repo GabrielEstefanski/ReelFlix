@@ -8,12 +8,13 @@ const LinkAccess = styled.a`
 interface Props {
   text: string;
   access: string;
+  target?: string;
 }
 
-export default function LinkButton({ text, access }: Props){
+export default function LinkButton({ text, access, target }: Props){
   return (
     <>
-      <LinkAccess href={access} id="default_link" target="_blank">{text}</LinkAccess>
+      <LinkAccess href={access} id="default_link" target={target}>{text}</LinkAccess>
     </>
   )
 }

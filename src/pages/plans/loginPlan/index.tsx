@@ -5,6 +5,7 @@ import StepIndicator from "../components/stepIndicator";
 import StepTitle from "../components/stepTitle";
 import LoginFieldPlan from "../components/loginFieldPlan";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   max-width: 1100px;
@@ -31,6 +32,7 @@ const SelectedPlanText = styled.span`
 `
 
 export default function LoginPlan() {
+  const { t } = useTranslation();
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   useEffect(() => {
@@ -49,11 +51,11 @@ export default function LoginPlan() {
         <DefaultCache>
           <form onSubmit={handleFormSubmit}>
             <FormContainer>
-              <StepIndicator description="PASSO 2 DE 3" />
-              <StepTitle description="Crie uma senha para iniciar sua assinatura" />
+              <StepIndicator description={t('login_plan.step_2_of_3')} />
+              <StepTitle description={t('login_plan.create_password')} />
                 <ContextRow>
-                  <p>Você selecionou o plano <SelectedPlanText>{selectedPlan}</SelectedPlanText>.</p>
-                  <p>Falta pouco agora!</p>
+                  <p>{t('login_plan.selected_plan')} <SelectedPlanText>{selectedPlan}</SelectedPlanText>.</p>
+                  <p>{t('login_plan.almost_done')}</p>
                 </ContextRow>
               <LoginFieldPlan/>
             </FormContainer>

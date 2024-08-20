@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { useTranslation } from 'react-i18next';
+import styled from "styled-components";
 
 const Footer = styled.div`
   border-top: 2px solid #fff;
@@ -8,12 +9,14 @@ const Footer = styled.div`
   text-align: center;
   left: 0;
   bottom: 0;
-`
+`;
 
 export default function PageFooter() {
+  const { t } = useTranslation();
+
   return (
     <Footer>
-      &copy; 2024 ReelsFlix. Todos os direitos reservados.
+      &copy; {t('footer_text')}
     </Footer>
-  )
+  );
 }

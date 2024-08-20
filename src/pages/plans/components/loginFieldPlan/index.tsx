@@ -1,9 +1,10 @@
-import FloatLabel from "../../../../components/floatLabel";
-import BandedRows from "../../../../components/bandedRow";
-import DefaultButton from "../../../../components/buttons/DefaultButton";
-import styled from "styled-components";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import FloatLabel from "../../../../components/floatLabel"
+import BandedRows from "../../../../components/bandedRow"
+import DefaultButton from "../../../../components/buttons/DefaultButton"
+import styled from "styled-components"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 const LoginField = styled.div`
   display: flex;
@@ -36,41 +37,38 @@ const validateEmail = (email: string) => {
 }
 
 export default function LoginFieldPlan () {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { t } = useTranslation();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isEmailValid, setIsEmailValid] = useState(false);
-  const [emailTouched, setEmailTouched] = useState(false);
-  const [passwordTouched, setPasswordTouched] = useState(false);
-  const [attemptedLogin, setAttemptedLogin] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [isEmailValid, setIsEmailValid] = useState(false)
+  const [attemptedLogin, setAttemptedLogin] = useState(false)
 
   const handleEmailBlur = () => {
     setIsEmailValid(validateEmail(email))
-    setEmailTouched(true)
   }
 
-  const handlePasswordBlur = () => {
-    setPasswordTouched(true);
-  };
-
   const handleLogin = () => {
-    setAttemptedLogin(true);
-    setIsEmailValid(validateEmail(email));
+    setAttemptedLogin(true)
+    setIsEmailValid(validateEmail(email))
 
     if (isEmailValid && email && password) {
-      localStorage.setItem('emailRegistered', email);
-      localStorage.setItem('passwordRegistered', password);
-      navigate('/success-plan', { replace: true });
+      const token = 'fake-jwt-token'
+      
+      localStorage.setItem('emailRegistered', email)
+      localStorage.setItem('passwordRegistered', password)
+      localStorage.setItem('token', token)
+      navigate('/success-plan', { replace: true })
     }
-  };
+  }
 
   return (
     <>
-     <LoginField>
+      <LoginField>
         <LoginStructural>
           <LoginContainer>
-            <FieldWrapper >
+            <FieldWrapper>
               <div onBlur={handleEmailBlur}>
                 <FloatLabel
                   type="email"
@@ -82,35 +80,33 @@ export default function LoginFieldPlan () {
                 />
               </div>
               {!isEmailValid && email && (
-                <BandedRows content="Email inválido" />
+                <BandedRows content={t('invalid_email')} />
               )}
-               {attemptedLogin && !email && (
-                <BandedRows content="Email é obrigatório" />
+              {attemptedLogin && !email && (
+                <BandedRows content={t('email_required')} />
               )}
             </FieldWrapper>
             <FieldWrapper>
               <FloatLabel
                 type="password"
                 id="password"
-                text="Insira sua senha"
+                text={t('insert_password')}
                 value={password}
                 onChange={setPassword}
                 invertColors
                 hideShowPasswordButton
               />
               {attemptedLogin && !password && (
-                <BandedRows content="A senha é obrigatória" />
+                <BandedRows content={t('password_required')} />
               )}
             </FieldWrapper>
             <ButtonNextContainer>
-            <div onBlur={handlePasswordBlur}>
               <DefaultButton 
-                description="Próximo" 
+                description={t('next')}
                 color='rgb(255, 124, 0)'
-                style={{ fontSize: '1.5em', fontWeight: 700,  minHeight: '3.5rem'}}
+                style={{ fontSize: '1.5em', fontWeight: 700, minHeight: '3.5rem'}}
                 onClick={handleLogin}
               />
-            </div>
             </ButtonNextContainer>
           </LoginContainer>
         </LoginStructural>

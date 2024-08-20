@@ -7,6 +7,7 @@ import StepTitle from "../components/stepTitle";
 import FormPlanSelection from "../components/formPlanSelection";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
   max-width: 1100px;
@@ -21,6 +22,7 @@ const ButtonNextContainer = styled.div`
 `
 
 export default function Plans() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState('');
 
@@ -32,14 +34,14 @@ export default function Plans() {
     <>
       <HeaderPlan />
       <Container>
-        <DefaultCache>
-          <StepIndicator description="PASSO 1 DE 3" />
-          <StepTitle description="Escolha o melhor plano para você" />
+      <DefaultCache>
+          <StepIndicator description={t('login_form.step_1_of_3')} />
+          <StepTitle description={t('login_form.choose_best_plan')} />
           <FormPlanSelection setSelectedPlan={setSelectedPlan} />
           <>
             <ButtonNextContainer>
               <DefaultButton 
-                description="Próximo"
+                description={t('next')}
                 color="rgb(255, 124, 0)"
                 style={{ fontSize: '1.5em', fontWeight: 700,  minHeight: '3.5rem'}}
                 onClick={planPath}
