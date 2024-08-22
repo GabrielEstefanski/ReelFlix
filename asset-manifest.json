@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.2429c717.css",
-    "main.js": "/static/js/main.618f1dff.js",
-    "static/media/lacasapapel.png": "/static/media/lacasapapel.fb87084327a52d5e65b9.png",
-    "static/media/banner-photo.jpg": "/static/media/banner-photo.d027043b7b39475b4f0c.jpg",
-    "static/media/popcorn.png": "/static/media/popcorn.e5f5a89e9ad23f1a6df1.png",
-    "static/media/promotional-image2.png": "/static/media/promotional-image2.a275833e8d138104bfa4.png",
-    "static/media/promotional-image.png": "/static/media/promotional-image.15fd94894ba8245df171.png",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/index.html",
-    "main.2429c717.css.map": "/static/css/main.2429c717.css.map",
-    "main.618f1dff.js.map": "/static/js/main.618f1dff.js.map"
+    "main.css": "/ReelFlix/static/css/main.17a69b9b.css",
+    "main.js": "/ReelFlix/static/js/main.8e21edc8.js",
+    "static/media/lacasapapel.png": "/ReelFlix/static/media/lacasapapel.fb87084327a52d5e65b9.png",
+    "static/media/banner-photo.jpg": "/ReelFlix/static/media/banner-photo.d027043b7b39475b4f0c.jpg",
+    "static/media/popcorn.png": "/ReelFlix/static/media/popcorn.e5f5a89e9ad23f1a6df1.png",
+    "static/media/promotional-image2.png": "/ReelFlix/static/media/promotional-image2.a275833e8d138104bfa4.png",
+    "static/media/promotional-image.png": "/ReelFlix/static/media/promotional-image.15fd94894ba8245df171.png",
+    "static/media/slick.svg": "/ReelFlix/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/ReelFlix/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/ReelFlix/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/ReelFlix/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/ReelFlix/index.html",
+    "main.17a69b9b.css.map": "/ReelFlix/static/css/main.17a69b9b.css.map",
+    "main.8e21edc8.js.map": "/ReelFlix/static/js/main.8e21edc8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2429c717.css",
-    "static/js/main.618f1dff.js"
+    "static/css/main.17a69b9b.css",
+    "static/js/main.8e21edc8.js"
   ]
 }
