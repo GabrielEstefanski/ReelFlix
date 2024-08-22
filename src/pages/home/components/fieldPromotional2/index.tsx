@@ -9,10 +9,10 @@ const Container = styled.div`
   box-sizing: border-box;
   flex-direction: column;
   height: 30rem;
-  margin: 0 5%;
+  padding: 0 5%;
   @media (min-width: 768px) {
     flex-direction: row;
-    margin: 0 20%;
+    padding: 0 20%;
   }
 `;
 
@@ -29,7 +29,7 @@ const DescriptionField = styled.div`
 const Title = styled.div`
   font-size: 2.5rem;
   font-weight: 900;
-  width: 650px;
+  width: 100%;
   text-align: left;
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -43,7 +43,6 @@ const Description = styled.div`
   font-weight: 400;
   @media (max-width: 768px) {
     font-size: 1.2rem;
-    width: 90%;
   }
 `;
 

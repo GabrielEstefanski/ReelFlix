@@ -23,7 +23,7 @@ const Container = styled.div`
   -webkit-box-align: center;
   flex-direction: row;
   align-items: center;
-  padding: 0.88rem 1.5em;
+  padding: 0.88rem 0;
   -webkit-transition: opacity 0.5s cubic-bezier(0.33, 0, 0, 1);
   transition: opacity 0.5s cubic-bezier(0.33, 0, 0, 1);
 `;
