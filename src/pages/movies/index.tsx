@@ -9,14 +9,13 @@ import { useTranslation } from "react-i18next";
 
 const Bottom = styled.div`
   padding: 5rem;
-`
-
+`;
 
 export default function Movies() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  
-  const categories = [
+
+  const categoryKeys = [
     'comedy',
     'action_adventure',
     'thriller',
@@ -24,22 +23,31 @@ export default function Movies() {
     'animation',
     'horror',
     'romance'
-  ].map(key => t(`categories.${key}`));
-
-  console.log(categories)
+  ];
   
+  const categories = categoryKeys.reduce((acc, key) => {
+    acc[key] = {
+      original: key,
+      translated: t(`categories.${key}`)
+    };
+    return acc;
+  }, {} as Record<string, { original: string, translated: string }>);
+
+  const categoryArray = Object.values(categories);
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/', { replace: true });
     }
   }, [navigate]);
+
   return (
     <>
       <Header />
       <Banner />
-      {categories.map(category => (
-        <Carousel key={category} category={category} images={images.images}/>
+      {categoryArray.map(category => (
+        <Carousel key={category.original} category={category} images={images.images}/>
       ))}
       <Bottom />
     </>

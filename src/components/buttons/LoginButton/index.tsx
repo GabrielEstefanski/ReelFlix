@@ -8,21 +8,21 @@ const Wrapper = styled.div`
 
 const LoginButton = styled.button`
 	color: #fff;
-	background-color: #000;
+	background-color: rgb(195, 125, 22, 1.0);
 	border-width: 0.0625rem;
 	border-style: solid;
 	height: 35px;
 	width: 80px;
-	border: 1px solid #888;
+	border: 1px solid rgb(132, 85, 15);
 	transition: background-color 0.3s ease;
 
-	&:hover {
-			background-color: rgba(255, 255, 255, 0.1);
-	}
+ &:hover {
+      background-color:  rgb(229, 153, 28);
+  }
 
-	&:active {
-		background-color: rgba(255, 255, 255, 0.2);
-}
+  &:active {
+    background-color: rgb(241, 194, 125);
+  }
 `;
 
 const Button = () => {

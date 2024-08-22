@@ -15,7 +15,7 @@ const Span = styled.a`
     text-decoration: underline;
     cursor: pointer;
   }
-`
+`;
 
 export default function LoginCard() {
   const navigate = useNavigate();
@@ -31,13 +31,9 @@ export default function LoginCard() {
 
       if (savedEmail) setEmail(savedEmail);
       if (savedPassword) setPassword(savedPassword);
-      if (savedRememberMe) setRememberMe(savedRememberMe)
-    }
-  }, [])
-
-  function handlePlan() {
-    navigate('/login-plan', {replace: true});
-  }
+      if (savedRememberMe) setRememberMe(savedRememberMe);
+    };
+  }, []);
 
   function handleLogin() {
     if (rememberMe) {
@@ -79,5 +75,5 @@ export default function LoginCard() {
       }
       footer={< CheckBox description="Lembre-se de mim" checked={false} onChange={setRememberMe} />}
     />
-  )
-}
+  );
+};

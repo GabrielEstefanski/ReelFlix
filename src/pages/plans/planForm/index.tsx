@@ -35,8 +35,8 @@ export default function Plans() {
       <HeaderPlan />
       <Container>
       <DefaultCache>
-          <StepIndicator description={t('login_form.step_1_of_3')} />
-          <StepTitle description={t('login_form.choose_best_plan')} />
+          <StepIndicator description={t('plan_form.step_1_of_3')} />
+          <StepTitle description={t('plan_form.choose_best_plan')} />
           <FormPlanSelection setSelectedPlan={setSelectedPlan} />
           <>
             <ButtonNextContainer>

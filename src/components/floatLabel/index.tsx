@@ -12,7 +12,8 @@ interface Props {
   hideShowPasswordButton?: boolean;
 }
 
-const Label = styled.div<{ invertColors?: boolean }>`
+const Label = styled.div.attrs<{ invertColors?: boolean }>({
+})<{ invertColors?: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -22,7 +23,7 @@ const Label = styled.div<{ invertColors?: boolean }>`
     height: 56px;
     padding: 20px 16px 0px 10px;
     outline: 0;
-    border: 1px solid ${({ invertColors }) => (invertColors ? '#ffffff' :'#000000' )};
+    border: 1px solid ${({ invertColors }) => (invertColors ? '#ffffff' : '#000000')};
     color: ${({ invertColors }) => (invertColors ? '#ffffff' : '#111')};
     border-radius: 4px;
     background: ${({ invertColors }) => (invertColors ? '#111' : '#ffffff')}; 
@@ -36,7 +37,7 @@ const Label = styled.div<{ invertColors?: boolean }>`
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 15px;
-    color:  ${({ invertColors }) => (invertColors ? '#999999;' : '#000000')};
+    color: ${({ invertColors }) => (invertColors ? '#999999' : '#000000')};
     pointer-events: none;
     position: absolute;
     transform: translate(0, 20px) scale(1);
@@ -64,6 +65,7 @@ const Label = styled.div<{ invertColors?: boolean }>`
     }
   }
 `;
+
 
 export default function FloatLabel({ type, id, value, text, onChange, invertColors, hideShowPasswordButton }: Props) {
   const isActive = !!value;

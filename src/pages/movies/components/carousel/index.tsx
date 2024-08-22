@@ -42,14 +42,19 @@ const LoadingSpinner = styled.div`
   }
 `;
 
+interface Category {
+  original: string;
+  translated: string;
+}
+
 interface Props {
   images: Image[];
-  category: string;
+  category: Category;
 }
 
 const Carousel: React.FC<Props> = ({ category, images }) => {
   const filteredImages = images.filter((image) =>
-    image.category.includes(category)
+    image.category.includes(category.original)
   );
 
   const imageUrls = filteredImages.map(image => image.url);
@@ -57,9 +62,9 @@ const Carousel: React.FC<Props> = ({ category, images }) => {
 
   return (
     <CarouselContainer>
-      <TitleCategory>{category}</TitleCategory>
+      <TitleCategory>{category.translated}</TitleCategory>
       {isLoaded ? (
-        <ImageSlider category={category} image={filteredImages} />
+        <ImageSlider category={category.translated} image={filteredImages} />
       ) : (
         <LoadingSpinner />
       )}

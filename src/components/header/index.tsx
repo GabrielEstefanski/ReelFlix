@@ -1,9 +1,9 @@
 import React from "react";
 import icon from '../../images/icon.png';
-import PlanButton from "../buttons/PlanButton";
 import LoginButton from "../buttons/LoginButton";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import LanguagePicker from "../languagePicker";
 
 const Container = styled.div`
 	background-color: #000;
@@ -37,7 +37,7 @@ const Header = () => {
 			<img src={icon} alt="icon"></img>
 			<Actions>
 				<Text>{t('watch_anytime')}</Text>
-				<PlanButton />
+				<LanguagePicker />
 				<LoginButton />
 			</Actions>
 		</Container>

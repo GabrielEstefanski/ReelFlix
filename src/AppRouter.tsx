@@ -6,6 +6,7 @@ import LoginHelp from "./pages/loginHelp";
 import PlanForm from "./pages/plans/planForm";
 import LoginPlan from "./pages/plans/loginPlan";
 import SuccessPlan from "./pages/plans/successPlan";
+import NotFound from "./pages/notFound";
 
 export default function AppRouter() {
     return (
@@ -18,7 +19,8 @@ export default function AppRouter() {
                 <Route path="login-help" element={<LoginHelp/>}/>
                 <Route path="login-plan" element={<LoginPlan/>}/>
                 <Route path="success-plan" element={<SuccessPlan/>}/>
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
-    )
-}
+    );
+};

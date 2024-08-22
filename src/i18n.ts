@@ -1,4 +1,3 @@
-// src/i18n.js
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
@@ -74,7 +73,7 @@ const resources = {
         "myListButton": "My List",
         "description": "Eight thieves lock themselves with hostages in the Royal Mint of Spain. Their leader manipulates the police to carry out a plan that could be the biggest heist in history or a doomed mission."
       },
-      "login_form": {
+      "plan_form": {
         "step_1_of_3": "STEP 1 OF 3",
         "choose_best_plan": "Choose the best plan for you",
       },
@@ -90,8 +89,14 @@ const resources = {
       },
       "login_help": {
         "recover_password": "Recover password",
+        "description_email": "Please provide this information to help us find your account (all fields required):",
         "description_reset_password": "We will send you an email with instructions on how to reset your password.",
-        "idk_email": "I don't remember my email or phone."
+        "idk_email": "I don't remember my email or phone.",
+        "first_name": "First name on account",
+        "last_name": "Last name on account",
+        "credit_or_debit": "Credit or debit card number on file",
+        "find_account": "Find Account",
+        "forgot_email": "Forgot Email/Password"
       },
       "categories": {
         "comedy": "Comedy",
@@ -177,7 +182,6 @@ const resources = {
       "plan_form": {
         "step_1_of_3": "PASSO 1 DE 3",
         "choose_best_plan": "Escolha o melhor plano para você",
-        "next": "Próximo",
       },
       "login_plan": {
         "step_2_of_3": "PASSO 2 DE 3",
@@ -191,8 +195,14 @@ const resources = {
       },
       "login_help": {
         "recover_password": "Recuperar senha",
+        "description_email": "Para que possamos encontrar sua conta, informe todos os dados abaixo:",
         "description_reset_password": "Enviaremos um email com instruções de como redefinir sua senha.",
-        "idk_email": "Não me lembro do meu email."
+        "idk_email": "Não me lembro do meu email ou telefone.",
+        "first_name": "Nome na conta",
+        "last_name": "Sobrenome na conta",
+        "credit_or_debit": "Cartão de crédito ou débito cadastrado",
+        "find_account": "Encontrar conta",
+        "forgot_email": "Esqueci meu email / senha"
       },
       "categories": {
         "comedy": "Comédia",
@@ -202,13 +212,119 @@ const resources = {
         "animation": "Animação",
         "horror": "Terror",
         "romance": "Romance"
+      },
+    }
+  },
+  es: {
+    translation: {
+      "password": "Contraseña",
+      "insert_password": "Introduce tu contraseña.",
+      "email_required": "El correo electrónico es obligatorio",
+      "invalid_email": "Correo electrónico inválido",
+      "password_required": "La contraseña es obligatoria",
+      "next": "Siguiente",
+      "reelflix_description": "Millones de películas, series y mucho más en un solo lugar.",
+      "enter": "Entrar",
+      "subscribe_now": "Suscríbete ahora",
+      "or": "O",
+      "incorrect_email_or_password": "Correo electrónico o contraseña incorrectos",
+      "forget_password": "¿Olvidaste tu contraseña?",
+      "remember_me": "Recuérdame",
+      "recaptcha_description": "Esta página está protegida por Google reCAPTCHA para garantizar que no eres un robot.",
+      "recaptcha_terms_disclosure": "La información recopilada por Google reCAPTCHA está sujeta a la <1>Política de Privacidad</1> y <3>Términos de Uso</3>, y se utiliza para proporcionar, mantener y mejorar el servicio reCAPTCHA y para fines de seguridad (no se utiliza para mostrar anuncios personalizados por Google).",
+      "learn_more": "Leer más",
+      "privacy_policy": "Política de Privacidad",
+      "terms_of_use": "Términos de Uso",
+      "watch_anytime": "Mira en cualquier lugar, en cualquier momento",
+      "download_and_watch": "Descarga tus películas y series y míralas sin conexión en casa, en el ascensor, en un submarino o en el espacio",
+      "download_anytime": "Descarga para ver cuando y donde quieras",
+      "offline_watch": "Mira sin conexión en la aplicación Prime Video descargando títulos en tu iPhone, iPad, tableta o dispositivo Android.",
+      "footer_text": "2024 ReelsFlix. Todos los derechos reservados.",
+      "choose_plan": "Elige el plan que mejor se adapte a ti a partir de R$ 19,99",
+      "price_per_month": "Precio por mes",
+      "video_audio_quality": "Calidad de audio/video",
+      "resolution": "Resolución",
+      "spatial_audio": "Audio espacial",
+      "compatible_devices": "Dispositivos compatibles",
+      "exit": "Salir",
+      "email_me": "Envíame un correo electrónico",
+      "email_sent": "¡Correo electrónico enviado!",
+      "enter_your_email": "Introduce tu correo electrónico",
+      "ads": "Anuncios",
+      "premium_plus": {
+        "title": "Premium +",
+        "subtitle": "4K + HDR",
+        "price_per_month": "R$ 39,90",
+        "video_audio_quality": "Perfecta",
+        "resolution": "4K (Ultra HD) + HDR",
+        "spatial_audio": "Incluido",
+        "compatible_devices": "TV, computadora, móvil, tableta",
+        "ads": "Sin anuncios"
+      },
+      "premium": {
+        "title": "Premium",
+        "subtitle": "1080p",
+        "price_per_month": "R$ 29,90",
+        "video_audio_quality": "Excelente",
+        "resolution": "4K (Ultra HD) + HDR",
+        "compatible_devices": "TV, computadora, móvil, tableta",
+        "ads": "Sin anuncios"
+      },
+      "standard": {
+        "title": "Standard",
+        "subtitle": "1080p",
+        "price_per_month": "R$ 19,90",
+        "video_audio_quality": "Buena",
+        "resolution": "4K (Ultra HD) + HDR",
+        "compatible_devices": "TV, computadora, móvil, tableta",
+        "ads": "Anuncios incluidos"
+      },
+      "banner": {
+        "title": "La Casa de Papel",
+        "watchButton": "Ver",
+        "myListButton": "Mi Lista",
+        "description": "Ocho ladrones se encierran con rehenes en la Casa de la Moneda de España. Su líder manipula a la policía para llevar a cabo un plan que podría ser el mayor robo de la historia o una misión condenada al fracaso."
+      },
+      "plan_form": {
+        "step_1_of_3": "PASO 1 DE 3",
+        "choose_best_plan": "Elige el mejor plan para ti",
+      },
+      "login_plan": {
+        "step_2_of_3": "PASO 2 DE 3",
+        "create_password": "Crea una contraseña para comenzar tu suscripción",
+        "selected_plan": "Has seleccionado el plan",
+        "almost_done": "¡Casi está listo!",
+      },
+      "success_plan": {
+        "title": "¡Todo listo! Ahora solo haz palomitas, apaga las luces y disfruta",
+        "access": "Acceder"
+      },
+      "login_help": {
+        "recover_password": "Recuperar contraseña",
+        "description_email": "Por favor proporciona esta información para ayudarnos a encontrar tu cuenta (todos los campos son obligatorios):",
+        "description_reset_password": "Te enviaremos un correo electrónico con instrucciones sobre cómo restablecer tu contraseña.",
+        "idk_email": "No recuerdo mi correo electrónico o teléfono.",
+        "first_name": "Nombre en la cuenta",
+        "last_name": "Apellido en la cuenta",
+        "credit_or_debit": "Número de tarjeta de crédito o débito registrado",
+        "find_account": "Encontrar cuenta",
+        "forgot_email": "Olvidé mi correo electrónico / contraseña"
+      },
+      "categories": {
+        "comedy": "Comedia",
+        "action_adventure": "Acción/Aventura",
+        "thriller": "Suspense",
+        "action": "Acción",
+        "animation": "Animación",
+        "horror": "Terror",
+        "romance": "Romance"
       }
     }
   }
-}
+}    
 
 i18n
-  // .use(LanguageDetector)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
