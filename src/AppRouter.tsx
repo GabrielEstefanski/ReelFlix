@@ -10,7 +10,7 @@ import NotFound from "./pages/notFound";
 
 export default function AppRouter() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <Routes>
                 <Route index element={<Home/>}/>
                 <Route path="movies" element={<Movies/>}/>

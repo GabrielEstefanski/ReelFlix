@@ -29,7 +29,7 @@ const DescriptionField = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 900;
   width: 100%;
   text-align: left;
@@ -40,7 +40,7 @@ const Title = styled.div`
 `;
 
 const Description = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   padding-top: 1rem;
   font-weight: 400;
   @media (max-width: 768px) {
@@ -52,7 +52,7 @@ const Photo = styled.div`
   display: flex;
   margin: 2rem auto 0;
   width: 100%;
-  justify-content: center;
+  justify-content: end;
   @media (min-width: 768px) {
     margin: 0;
   }
